@@ -715,6 +715,42 @@ button:focus-visible {
   font-size: 10px;
 }
 
+.resource-download {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 38px;
+  border: 1px solid #cddacb;
+  border-radius: 6px;
+  padding: 8px 12px;
+  background: #f4f7f0;
+  color: #315d43;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 650;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 160ms ease, border-color 160ms ease;
+}
+
+.resource-download:not(:disabled):hover {
+  border-color: #9eb99a;
+  background: #e8f0e3;
+}
+
+.resource-download:focus-visible {
+  outline: 2px solid #5d8666;
+  outline-offset: 3px;
+}
+
+.resource-download:disabled {
+  border-color: #e0e5dd;
+  background: #f3f4f0;
+  color: #98a198;
+  cursor: not-allowed;
+}
+
 .resource-status {
   display: inline-flex;
   align-items: center;
@@ -3621,6 +3657,27 @@ a.team-email:hover {
     min-height: 0;
     padding: 24px;
   }
+}
+
+#documents .resource-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#documents .resource-card h3 {
+  min-height: 2.7em;
+  line-height: 1.35;
+}
+
+#documents .resource-card > p {
+  flex: 1;
+  margin-bottom: 18px;
+  line-height: 1.7;
+}
+
+#documents .resource-card .resource-download {
+  margin-top: auto;
 }
 
 .milestone-list {
