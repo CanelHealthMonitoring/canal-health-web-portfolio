@@ -276,30 +276,6 @@ button:focus-visible {
   margin-bottom: 48px;
 }
 
-.section-heading-project {
-  align-items: center;
-}
-
-.section-heading-copy {
-  width: 100%;
-}
-
-.section-heading-title-row {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-}
-
-.section-heading-logo {
-  display: block;
-  width: 52px;
-  height: 52px;
-  flex: 0 0 auto;
-  object-fit: contain;
-  border-radius: 16px;
-  box-shadow: 0 12px 28px rgba(13, 62, 44, 0.18);
-}
-
 .section-index {
   color: #7b9c68;
   font-family: Georgia, "Times New Roman", serif;
