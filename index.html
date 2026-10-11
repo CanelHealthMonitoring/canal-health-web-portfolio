@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore CanalIoT, an SLIIT research project combining ESP32 edge sensing, LoRa communication and machine learning for canal health monitoring.">
+  <title>CanalIoT — Canal Health Monitoring Research</title>
+  
+  <!-- Import Inter Font from Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Tailwind CDN for specific layout utilities -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body style="font-family: 'Inter', sans-serif;">
+
+  <!-- NAVBAR -->
+  <header class="site-header">
+    <div class="page-shell nav-inner">
+      <a class="brand" href="#home" aria-label="CanalIoT home">
+        <span class="brand-mark">
+          <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.6 2 5.2 2 2.5 0 2.5-2 5.2-2 1.3 0 1.9.5 2.5 1"/><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.6 2 5.2 2 2.5 0 2.5-2 5.2-2 1.3 0 1.9.5 2.5 1"/><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.6 2 5.2 2 2.5 0 2.5-2 5.2-2 1.3 0 1.9.5 2.5 1"/></svg>
+        </span>
+        <span>canal<span class="brand-accent">iot</span></span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#research">Domain</a>
+        <a href="#milestones">Milestone</a>
+        <a href="#documents">Documents</a>
+        <a href="#presentation">Presentation</a>
+        <a href="#about">About us</a>
+      </nav>
+
+      <a class="nav-contact" href="#contact">
+        Contact us <span aria-hidden="true">↗</span>
+      </a>
+
+      <button class="mobile-menu-button" id="mobile-menu-btn" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-navigation">
+        <svg id="icon-menu" xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+        <svg id="icon-close" style="display: none;" xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </button>
+    </div>
+
+    <nav class="mobile-nav" id="mobile-navigation" aria-label="Mobile navigation" style="display: none;">
+      <a href="#home" class="mobile-link">Home</a>
+      <a href="#research" class="mobile-link">Domain</a>
+      <a href="#milestones" class="mobile-link">Milestone</a>
+      <a href="#documents" class="mobile-link">Documents</a>
+      <a href="#presentation" class="mobile-link">Presentation</a>
+      <a href="#about" class="mobile-link">About us</a>
+      <a href="#contact" class="mobile-link">Contact us</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section id="home" class="hero-section scroll-mt-24">
+      <div class="page-shell hero-content">
+        <div class="hero-copy">
+          <div class="eyebrow eyebrow-light">
+            <span class="eyebrow-dot"></span>
+            IoT-BASED CANAL HEALTH MONITORING
+          </div>
+          <h1>
+            Canal<span>IoT</span>
+          </h1>
+          <p class="hero-subtitle">
+            See the health of our canals more clearly.
+          </p>
+          <p class="hero-description">
+            A final-year research project at SLIIT bringing together edge sensing, long-range communication and machine learning for smarter canal infrastructure monitoring.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-lime" href="#research">
+              Explore the research 
+              <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+          <div class="hero-note">
+            <span class="hero-note-line"></span>
+            From field observations to infrastructure insights
+          </div>
+        </div>
+        <aside class="hero-focus" aria-label="Research focus">
+          <span class="hero-focus-label">RESEARCH FOCUS</span>
+          <h2>Off-Grid Canal Health Monitoring</h2>
+          <p>
+            Decentralized edge intelligence and resilient LoRa networks for continuous rural irrigation management.
+          </p>
+          <div class="hero-focus-tags">
+            <span>Edge Computing</span>
+            <span>LoRa Mesh</span>
+            <span>Predictive Analytics</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- PROJECT SCOPE -->
+    <section id="research" class="section section-paper scroll-mt-20">
+      <div class="page-shell">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow"><span class="section-index">01</span> DOMAIN</p>
+            <h2>Project Scope</h2>
+            <p class="section-description">
+              An overview of the research focus, problem, and objectives.
+            </p>
+          </div>
+        </div>
+
+        <div class="research-grid project-scope-grid">
+          <article class="research-card scope-card">
+            <div class="card-topline">
+              <span class="card-number">01</span>
+              <span class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" x2="8" y1="13" y2="13"/><line x1="16" x2="8" y1="17" y2="17"/><line x1="10" x2="8" y1="9" y2="9"/></svg></span>
+            </div>
+            <h3>Literature Survey</h3>
+            <p>Existing IoT irrigation systems effectively capture isolated environmental parameters but lack a cohesive architecture that unites edge-computed indices with resilient networking. Previous works utilizing ultrasonic sensors for physical blockages rely on isolated threshold alarms without integrating turbidity or flow metrics. Furthermore, prior water quality monitoring solutions depend heavily on cloud infrastructure and centralized validation rather than outputting actionable indices directly at the edge. Existing networking approaches often employ LoRa or 3G star topologies that struggle with line-of-sight constraints and high power consumption, while multi-hop alternatives tend to overburden constrained microcontrollers. At the application layer, conventional Web-GIS dashboards introduce high latency and scalability bottlenecks due to stateless HTTP polling.</p>
+          </article>
+
+          <article class="research-card scope-card">
+            <div class="card-topline">
+              <span class="card-number">02</span>
+              <span class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></span>
+            </div>
+            <h3>Research Gap</h3>
+            <ul class="scope-card-bullets">
+              <li>Absence of a unified, multi-parameter health scoring system (such as CHI and CWQI) that operates autonomously at the edge without cloud dependency.</li>
+              <li>Heavy reliance on stable cloud connections in rural areas, rendering critical safety outputs unavailable during frequent network outages.</li>
+              <li>Inefficient networking topologies that either overburden edge nodes with complex mesh routing or suffer from signal degradation and packet collisions in rural settings.</li>
+              <li>Lack of predictive backend analytics, with current platforms relying on simple threshold alerts rather than proactively anticipating infrastructure degradation.</li>
+              <li>High latency and redundant network calls in existing IoT web dashboards caused by stateless HTTP polling.</li>
+            </ul>
+          </article>
+
+          <article class="research-card scope-card scope-card-wide">
+            <div class="card-topline">
+              <span class="card-number">03</span>
+              <span class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="19" y2="5"/><polyline points="5 12 12 5 19 12"/></svg></span>
+            </div>
+            <h3>Research Problem</h3>
+            <p>Irrigation canals frequently suffer from siltation and pollution that degrade crop productivity, yet existing automated IoT monitoring systems fail in rural regions because they rely heavily on constant cloud connectivity, lack proactive predictive capabilities, and struggle with high packet collisions over Low-Power Wide-Area Networks.</p>
+          </article>
+
+          <article class="research-card scope-card">
+            <div class="card-topline">
+              <span class="card-number">04</span>
+              <span class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>
+            </div>
+            <h3>Main Objective</h3>
+            <p>To develop an edge-computing-based Canal Health Monitoring System that utilizes a decentralized communication framework to compute actionable health indices locally and provides a real-time, off-grid decision-support platform for proactive irrigation management.</p>
+          </article>
+
+          <article class="research-card scope-card">
+            <div class="card-topline">
+              <span class="card-number">05</span>
+              <span class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.6 2 5.2 2 2.5 0 2.5-2 5.2-2 1.3 0 1.9.5 2.5 1"/><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.6 2 5.2 2 2.5 0 2.5-2 5.2-2 1.3 0 1.9.5 2.5 1"/><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.6 2 5.2 2 2.5 0 2.5-2 5.2-2 1.3 0 1.9.5 2.5 1"/></svg></span>
+            </div>
+            <h3>Sub Objectives</h3>
+            <ul class="scope-card-bullets">
+              <li>To engineer localized edge-computing nodes (Health and Quality Sensing Nodes) using ESP32 microcontrollers to autonomously compute a Canal Health Index (CHI) and Canal Water Quality Index (CWQI).</li>
+              <li>To design an edge data aggregation module that bridges localized Wi-Fi (ESP-NOW) with a LoRa backhaul to minimize remote node computational overhead and prevent radio collisions.</li>
+              <li>To implement a Multi-Criteria Decision Analysis (MCDA) algorithm at a centralized gateway to dynamically evaluate mesh network link quality using RSSI, SNR, and packet loss.</li>
+              <li>To build an interactive, event-driven AWS serverless web dashboard that visualizes aggregated telemetry with sub-second latency.</li>
+              <li>To integrate a Random Forest machine learning model within the cloud infrastructure to proactively predict system health and infrastructure bottlenecks before they cause critical system failure.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- METHODOLOGY -->
+    <section id="methodology" class="section section-paper scroll-mt-20">
+      <div class="page-shell">
+        <div class="section-heading">
+          <div>
+            <h2>Methodology</h2>
+            <p class="section-description">
+              The methodology includes edge-based sensor data acquisition, dual-protocol network aggregation, secure cloud ingestion, and machine learning-driven visualization.   
+            </p>
+          </div>
+        </div>
+
+        <div class="research-grid research-grid-three">
+          <article class="research-card scope-card">
+            <div class="card-topline">
+              <span class="card-number">01</span>
+              <span class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg></span>
+            </div>
+            <h3>Health Index Computation (CHI)</h3>
+            <p>The Health Sensing Node normalizes ultrasonic sludge, flow, and turbidity sensor data into 0-100 scores to locally compute the Canal Health Index (CHI) directly on the ESP32 microcontroller.</p>
+          </article>
+
+          <article class="research-card scope-card">
+            <div class="card-topline">
+              <span class="card-number">02</span>
+              <span class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2"/><path d="M4.93 19.07a10 10 0 0 1 0-14.14"/><path d="M7.76 16.24a6 6 0 0 1 0-8.49"/><path d="M16.24 7.76a6 6 0 0 1 0 8.49"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg></span>
+            </div>
+            <h3>Quality Index Computation (CWQI)</h3>
+            <p>The Quality Sensing Node filters pH, EC, and temperature data to compute the Canal Water Quality Index (CWQI) and classifies the contamination type (Organic, Chemical, or Mixed) autonomously at the edge.</p>
+          </article>
+
+          <article class="research-card scope-card">
+            <div class="card-topline">
+              <span class="card-number">03</span>
+              <span class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg></span>
+            </div>
+            <h3>Local Data Ingestion</h3>
+            <p>To prevent local radio collisions and minimize overhead, the sensing nodes transmit their computed indices and metrics to solar-powered field gateways using the connectionless ESP-NOW protocol.</p>
+          </article>
+
+          <article class="research-card scope-card">
+            <div class="card-topline">
+              <span class="card-number">04</span>
+              <span class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.6 2 5.2 2 2.5 0 2.5-2 5.2-2 1.3 0 1.9.5 2.5 1"/><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.6 2 5.2 2 2.5 0 2.5-2 5.2-2 1.3 0 1.9.5 2.5 1"/><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.6 2 5.2 2 2.5 0 2.5-2 5.2-2 1.3 0 1.9.5 2.5 1"/></svg></span>
+            </div>
+            <h3>LoRa Mesh Transmission</h3>
+            <p>The field gateways utilize Ai-Thinker Ra-02 (SX1278) LoRa transceivers to transmit the aggregated data payloads across a strict linear mesh network optimized for long-range, line-of-sight propagation along the canals.</p>
+          </article>
+
+          <article class="research-card scope-card">
+            <div class="card-topline">
+              <span class="card-number">05</span>
+              <span class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="8" rx="2" ry="2"/><circle cx="7" cy="15" r="1"/><circle cx="11" cy="15" r="1"/><circle cx="15" cy="15" r="1"/><path d="M17 11v-4a2 2 0 0 0-2-2h-6a2 2 0 0 0-2 2v4"/></svg></span>
+            </div>
+            <h3>Network Link Evaluation</h3>
+            <p>A centralized Raspberry Pi base station uses a Multi-Criteria Decision Analysis (MCDA) algorithm to dynamically evaluate mesh network links by scoring RSSI, SNR, and packet loss to calculate the Global Mesh Quality.</p>
+          </article>
+
+          <article class="research-card scope-card">
+            <div class="card-topline">
+              <span class="card-number">06</span>
+              <span class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></span>
+            </div>
+            <h3>Secure Cloud Ingestion</h3>
+            <p>The base station merges the canal sensor metrics with the network health data into a consolidated JSON payload and transmits it securely via TLS 1.2-encrypted MQTT to AWS IoT Core.</p>
+          </article>
+
+          <article class="research-card scope-card">
+            <div class="card-topline">
+              <span class="card-number">07</span>
+              <span class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+            </div>
+            <h3>Serverless Data Processing</h3>
+            <p>AWS IoT Core routes the incoming telemetry into Amazon DynamoDB for storage, integrating with event-driven AWS Lambda functions to handle backend processing and system scalability.</p>
+          </article>
+
+          <article class="research-card scope-card">
+            <div class="card-topline">
+              <span class="card-number">08</span>
+              <span class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>
+            </div>
+            <h3>Infrastructure Health Prediction</h3>
+            <p>A deployed 100-estimator Random Forest model processes real-time cloud telemetry via a Flask API on AWS Lightsail to proactively predict system degradation across five operational states.</p>
+          </article>
+
+          <article class="research-card scope-card">
+            <div class="card-topline">
+              <span class="card-number">09</span>
+              <span class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" x2="8" y1="13" y2="13"/><line x1="16" x2="8" y1="17" y2="17"/><line x1="10" x2="8" y1="9" y2="9"/></svg></span>
+            </div>
+            <h3>Real-Time Dashboard Visualization</h3>
+            <p>A React.js and Tailwind CSS web dashboard visualizes the telemetry, CHI/CWQI metrics, and geospatial tracking with sub-second latency using AWS API Gateway WebSockets.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- TOOLS AND FRAMEWORKS -->
+    <section id="tools" class="section section-paper scroll-mt-20">
+      <div class="page-shell">
+        <div class="section-heading">
+          <div>
+            <h2>Tools and Frameworks</h2>
+            <p class="section-description">
+              Technologies include hardware and edge devices, networking and communication protocols, cloud and backend infrastructure, machine learning and analytics, and frontend visualization.
+            </p>
+          </div>
+        </div>
+
+        <div class="research-grid tool-category-grid">
+          <article class="research-card tool-category-card">
+            <div class="card-topline">
+              <span class="card-number">01</span>
+              <span class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></span>
+            </div>
+            <h3>Frontend and Visualization</h3>
+            <ul class="technology-list">
+              <li>React.js</li>
+              <li>Tailwind CSS</li>
+              <li>Leaflet GIS</li>
+              <li>WebSockets</li>
+            </ul>
+          </article>
+
+          <article class="research-card tool-category-card">
+            <div class="card-topline">
+              <span class="card-number">02</span>
+              <span class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg></span>
+            </div>
+            <h3>Cloud and Backend</h3>
+            <ul class="technology-list">
+              <li>AWS IoT Core</li>
+              <li>AWS Lambda</li>
+              <li>Amazon DynamoDB</li>
+              <li>AWS API Gateway</li>
+              <li>AWS Lightsail</li>
+              <li>Flask</li>
+            </ul>
+          </article>
+
+          <article class="research-card tool-category-card">
+            <div class="card-topline">
+              <span class="card-number">03</span>
+              <span class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg></span>
+            </div>
+            <h3>Hardware and Edge Devices</h3>
+            <ul class="technology-list">
+              <li>ESP32-S3</li>
+              <li>ESP32-C3 SuperMini</li>
+              <li>Raspberry Pi Zero</li>
+              <li>Ai-Thinker Ra-02 (SX1278)</li>
+              <li>Ultrasonic & Water Quality Sensors</li>
+            </ul>
+          </article>
+
+          <article class="research-card tool-category-card">
+            <div class="card-topline">
+              <span class="card-number">04</span>
+              <span class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2"/><path d="M4.93 19.07a10 10 0 0 1 0-14.14"/><path d="M7.76 16.24a6 6 0 0 1 0-8.49"/><path d="M16.24 7.76a6 6 0 0 1 0 8.49"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg></span>
+            </div>
+            <h3>Networking and Communication</h3>
+            <ul class="technology-list">
+              <li>ESP-NOW</li>
+              <li>LoRa (433 MHz)</li>
+              <li>MQTT (TLS 1.2)</li>
+              <li>SPI Protocol</li>
+            </ul>
+          </article>
+
+          <article class="research-card tool-category-card">
+            <div class="card-topline">
+              <span class="card-number">05</span>
+              <span class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>
+            </div>
+            <h3>Machine Learning and Edge Analytics</h3>
+            <ul class="technology-list">
+              <li>Random Forest Classifier</li>
+              <li>Multi-Criteria Decision Analysis (MCDA)</li>
+              <li>AWS CloudWatch</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- MILESTONES -->
+    <section id="milestones" class="section milestone-section scroll-mt-20">
+      <div class="page-shell milestone-layout">
+        <div class="milestone-heading">
+          <p class="eyebrow"><span class="section-index">03</span> PROJECT JOURNEY</p>
+          <h2>Research,<br />step by step.</h2>
+          <p>A record of the project’s academic review checkpoints.</p>
+        </div>
+        <div class="milestone-list">
+          <article class="milestone-row">
+            <span class="milestone-index">01</span>
+            <div class="milestone-title">
+              <h3>Project Proposal</h3>
+              <p><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg> November 2025</p>
+            </div>
+            <svg class="milestone-arrow" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </article>
+          <article class="milestone-row">
+            <span class="milestone-index">02</span>
+            <div class="milestone-title">
+              <h3>Progress Presentation 1</h3>
+              <p><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg> Early 2026</p>
+            </div>
+            <svg class="milestone-arrow" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </article>
+          <article class="milestone-row">
+            <span class="milestone-index">03</span>
+            <div class="milestone-title">
+              <h3>Progress Presentation 2</h3>
+              <p><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg> Mid 2026</p>
+            </div>
+            <svg class="milestone-arrow" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </article>
+          <article class="milestone-row">
+            <span class="milestone-index">04</span>
+            <div class="milestone-title">
+              <h3>Final Assessment & Viva</h3>
+              <p><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg> Late 2026</p>
+            </div>
+            <svg class="milestone-arrow" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOCUMENTS -->
+    <section id="documents" class="section resources-section scroll-mt-20">
+      <div class="page-shell">
+        <div class="section-heading resources-heading">
+          <div>
+            <p class="eyebrow"><span class="section-index">04</span> PROJECT LIBRARY</p>
+            <h2>Documents.</h2>
+            <p class="section-description">
+              Project documents and research materials will be available here.
+            </p>
+          </div>
+        </div>
+        <div class="resource-grid">
+          <article class="resource-card">
+            <div class="resource-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" x2="8" y1="13" y2="13"/><line x1="16" x2="8" y1="17" y2="17"/><line x1="10" x2="8" y1="9" y2="9"/></svg>
+            </div>
+            <span class="resource-type">Project document</span>
+            <h3>Project Charter</h3>
+            <p>Scope, objectives and planning</p>
+            <span class="resource-status"><span></span> Details to be added</span>
+          </article>
+          <article class="resource-card">
+            <div class="resource-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" x2="8" y1="13" y2="13"/><line x1="16" x2="8" y1="17" y2="17"/><line x1="10" x2="8" y1="9" y2="9"/></svg>
+            </div>
+            <span class="resource-type">Research paper</span>
+            <h3>IEEE Conference Paper</h3>
+            <p>Research publication</p>
+            <span class="resource-status"><span></span> Details to be added</span>
+          </article>
+          <article class="resource-card">
+            <div class="resource-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg>
+            </div>
+            <span class="resource-type">Slide decks</span>
+            <h3>Project Presentations</h3>
+            <p>Proposal and final presentation decks</p>
+            <span class="resource-status"><span></span> Details to be added</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRESENTATION -->
+    <section id="presentation" class="section resources-section scroll-mt-20">
+      <div class="page-shell">
+        <div class="section-heading resources-heading">
+          <div>
+            <p class="eyebrow"><span class="section-index">05</span> PRESENTATION</p>
+            <h2>Presentation.</h2>
+            <p class="section-description">
+              Presentation slides and project updates will be shared here.
+            </p>
+          </div>
+        </div>
+        <div class="resource-grid">
+          <article class="resource-card">
+            <div class="resource-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" x2="8" y1="13" y2="13"/><line x1="16" x2="8" y1="17" y2="17"/><line x1="10" x2="8" y1="9" y2="9"/></svg>
+            </div>
+            <span class="resource-type">Project document</span>
+            <h3>Project Charter</h3>
+            <p>Scope, objectives and planning</p>
+            <span class="resource-status"><span></span> Details to be added</span>
+          </article>
+          <article class="resource-card">
+            <div class="resource-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" x2="8" y1="13" y2="13"/><line x1="16" x2="8" y1="17" y2="17"/><line x1="10" x2="8" y1="9" y2="9"/></svg>
+            </div>
+            <span class="resource-type">Research paper</span>
+            <h3>IEEE Conference Paper</h3>
+            <p>Research publication</p>
+            <span class="resource-status"><span></span> Details to be added</span>
+          </article>
+          <article class="resource-card">
+            <div class="resource-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg>
+            </div>
+            <span class="resource-type">Slide decks</span>
+            <h3>Project Presentations</h3>
+            <p>Proposal and final presentation decks</p>
+            <span class="resource-status"><span></span> Details to be added</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEAM -->
+    <section id="about" class="section team-section scroll-mt-20">
+      <div class="page-shell team-page">
+        <div class="team-heading">
+          <div>
+            <p class="eyebrow"><span class="section-index">06</span> THE PEOPLE</p>
+            <h2>The Team Behind CanalIoT</h2>
+            <p class="section-description">
+              Meet the people contributing to the CanalIoT research project.
+            </p>
+          </div>
+        </div>
+        <div class="team-grid">
+          <article class="team-profile-card">
+            <div style="position: relative; aspect-ratio: 1.26/1; overflow: hidden; border-bottom: 1px solid #e4e9e1; background-color: #f4f7f0;">
+              <img src="./images/Thaveesha.jpg" alt="Photo of Sanjana K.G.T.S" style="object-fit: cover; object-position: center 55%; width: 100%; height: 100%; position: absolute; top: 0; left: 0;">
+            </div>
+            <div class="team-profile-content">
+              <p class="team-component">IoT-Based Edge Data Aggregation Module</p>
+              <h3>Sanjana K.G.T.S</h3>
+              <p class="team-member-description">Responsible for the IoT-based edge data aggregation and multi-hop LoRa transmission network, integrating local canal sensors with centralized edge computing to evaluate mesh health before cloud ingestion.</p>
+              <a class="team-email" href="mailto:thaveeshasanjana4@gmail.com">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2" ry="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> thaveeshasanjana4@gmail.com
+              </a>
+            </div>
+          </article>
+
+          <article class="team-profile-card">
+            <div style="position: relative; aspect-ratio: 1.26/1; overflow: hidden; border-bottom: 1px solid #e4e9e1; background-color: #f4f7f0;">
+              <img src="./images/Sahan.jpg" alt="Photo of Viduranga S.P.S" style="object-fit: cover; object-position: center 38%; transform: scale(1.00); width: 100%; height: 100%; position: absolute; top: 0; left: 0;">
+            </div>
+            <div class="team-profile-content">
+              <p class="team-component">Smart Web Based System Health Monitoring Dashboard</p>
+              <h3>Viduranga S.P.S</h3>
+              <p class="team-member-description">Designed and implemented the real-time data visualization module and Random Forest-based infrastructure health prediction system, integrating AWS WebSocket streaming, interactive React dashboard, and Flask ML API.</p>
+              <a class="team-email" href="mailto:sahanvidu2@gmail.com">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2" ry="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> sahanvidu2@gmail.com
+              </a>
+            </div>
+          </article>
+
+          <article class="team-profile-card">
+            <div style="position: relative; aspect-ratio: 1.26/1; overflow: hidden; border-bottom: 1px solid #e4e9e1; background-color: #f4f7f0;">
+              <img src="./images/viraj.jpeg" alt="Photo of Pasindu W.G.V" style="object-fit: cover; object-position: center 45%; width: 100%; height: 100%; position: absolute; top: 0; left: 0;">
+            </div>
+            <div class="team-profile-content">
+              <p class="team-component">Canal Water Quality Monitoring and Contamination Classification Component</p>
+              <h3>Pasindu W.G.V</h3>
+              <p class="team-member-description">Responsible for the ESP32-based canal water quality monitoring node, integrating pH, electrical conductivity, and temperature sensors to calculate the Canal Water Quality Index (CWQI) and detect potential contamination through real-time edge processing, enabling offline water quality assessment and irrigation safety alerts.</p>
+              <a class="team-email" href="mailto:virajpasindu076@gmail.com">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2" ry="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> virajpasindu076@gmail.com
+              </a>
+            </div>
+          </article>
+
+          <article class="team-profile-card">
+            <div class="team-photo-placeholder team-photo-4" aria-label="Photo placeholder for Chandraguptha H.A.T">
+              <span>KF</span>
+              <span class="photo-prompt"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7"/><line x1="16" y1="5" x2="22" y2="5"/><line x1="19" y1="2" x2="19" y2="8"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg> Add photo</span>
+            </div>
+            <div class="team-profile-content">
+              <p class="team-component">Cloud & dashboard</p>
+              <h3>Chandraguptha H.A.T</h3>
+              <p class="team-member-description">Connects gateway data to cloud ingestion and the project’s monitoring dashboard experience.</p>
+              <a class="team-email" href="mailto:team04@example.com">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2" ry="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> team04@example.com
+              </a>
+            </div>
+          </article>
+
+          <article class="team-profile-card team-guide-card">
+            <div style="position: relative; aspect-ratio: 1.26/1; overflow: hidden; border-bottom: 1px solid #e4e9e1; background-color: #f4f7f0;">
+              <img src="./images/dinithip.jpeg" alt="Photo of Ms. Dinithi Pandithage" style="object-fit: cover; object-position: center 5%; width: 100%; height: 100%; position: absolute; top: 0; left: 0;">
+            </div>
+            <div class="team-profile-content">
+              <p class="team-component">Supervisor</p>
+              <h3>Ms. Dinithi Pandithage</h3>
+              <p class="team-member-description">Lecturer | Department of Computer Systems Engineering | Faculty of Computing, Sri Lanka Institute of Information Technology, Malabe, Sri Lanka</p>
+              <span class="team-email team-email-pending">dinithi.p@sliit.lk</span>
+            </div>
+          </article>
+
+          <article class="team-profile-card team-guide-card">
+            <div style="position: relative; aspect-ratio: 1.26/1; overflow: hidden; border-bottom: 1px solid #e4e9e1; background-color: #f4f7f0;">
+              <img src="./images/dinithp.jpeg" alt="Photo of Mr. Dinith Primal" style="object-fit: cover; object-position: center 5%; width: 100%; height: 100%; position: absolute; top: 0; left: 0;">
+            </div>
+            <div class="team-profile-content">
+              <p class="team-component">Co-supervisor</p>
+              <h3>Mr. Dinith Primal</h3>
+              <p class="team-member-description">Lecturer | Department of Computer Systems Engineering | Faculty of Computing, Sri Lanka Institute of Information Technology, Malabe, Sri Lanka</p>
+              <span class="team-email team-email-pending">dinith.p@sliit.lk</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact-section scroll-mt-20">
+      <div class="page-shell contact-inner">
+        <div class="contact-intro">
+          <p class="eyebrow eyebrow-light">LET’S CONNECT</p>
+          <h2>Curious about<br />the project?</h2>
+          <p>Send the team a message about the research, system or collaboration.</p>
+          <div class="contact-address">
+            <span class="contact-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2" ry="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </span>
+            <span><small>EMAIL THE TEAM</small><strong>canaliot01@gmail.com</strong></span>
+          </div>
+          <div class="contact-address">
+            <span class="contact-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            </span>
+            <span><small>BASED AT</small><strong>SLIIT · Malabe, Sri Lanka</strong></span>
+          </div>
+        </div>
+        
+        <form class="contact-form" id="contact-form">
+          <div class="form-heading">
+            <span>WRITE TO US</span>
+            <p>We’d love to hear from you.</p>
+          </div>
+
+          <div class="form-row">
+            <label class="form-field">
+              <span>Name</span>
+              <input autocomplete="name" name="name" placeholder="Your name" required />
+            </label>
+            <label class="form-field">
+              <span>Email</span>
+              <input autocomplete="email" name="email" type="email" placeholder="you@example.com" required />
+            </label>
+          </div>
+
+          <label class="form-field">
+            <span>Subject</span>
+            <input name="subject" placeholder="What would you like to discuss?" required />
+          </label>
+
+          <label class="form-field">
+            <span>Message</span>
+            <textarea name="message" placeholder="Write your message here..." rows="5" required></textarea>
+          </label>
+
+          <div class="form-submit-row">
+            <button class="button button-lime" type="submit">
+              Prepare email 
+              <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </button>
+            <span>Your email app will open to send your message.</span>
+          </div>
+
+          <p class="form-notice" id="form-notice" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="page-shell footer-inner">
+      <a href="#home" class="footer-brand">
+        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.6 2 5.2 2 2.5 0 2.5-2 5.2-2 1.3 0 1.9.5 2.5 1"/><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.6 2 5.2 2 2.5 0 2.5-2 5.2-2 1.3 0 1.9.5 2.5 1"/><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.6 2 5.2 2 2.5 0 2.5-2 5.2-2 1.3 0 1.9.5 2.5 1"/></svg> 
+        CanalIoT
+      </a>
+      <p>© 2026 CanalIoT All rights reserved.</p>
+      <a class="back-to-top" href="#home">
+        Back to top 
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+      </a>
+    </div>
+  </footer>
+
+  <!-- Vanilla JavaScript Logic -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      
+      // 1. Mobile Menu Logic
+      const menuBtn = document.getElementById("mobile-menu-btn");
+      const mobileNav = document.getElementById("mobile-navigation");
+      const iconMenu = document.getElementById("icon-menu");
+      const iconClose = document.getElementById("icon-close");
+      const mobileLinks = document.querySelectorAll(".mobile-link");
+
+      let isOpen = false;
+
+      function toggleMenu() {
+        isOpen = !isOpen;
+        menuBtn.setAttribute("aria-expanded", isOpen);
+        menuBtn.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
+        
+        if (isOpen) {
+          mobileNav.style.display = "flex"; 
+          iconMenu.style.display = "none";
+          iconClose.style.display = "block";
+        } else {
+          mobileNav.style.display = "none";
+          iconMenu.style.display = "block";
+          iconClose.style.display = "none";
+        }
+      }
+
+      menuBtn.addEventListener("click", toggleMenu);
+
+      mobileLinks.forEach(link => {
+        link.addEventListener("click", () => {
+          if (isOpen) toggleMenu();
+        });
+      });
+
+      // 2. Contact Form Logic
+      const contactForm = document.getElementById('contact-form');
+      const formNotice = document.getElementById('form-notice');
+
+      if (contactForm) {
+        contactForm.addEventListener('submit', (event) => {
+          event.preventDefault(); 
+
+          const formData = new FormData(contactForm);
+          const name = String(formData.get("name") || "").trim();
+          const email = String(formData.get("email") || "").trim();
+          const subject = String(formData.get("subject") || "").trim();
+          const message = String(formData.get("message") || "").trim();
+          
+          const body = `Name: ${name}\nEmail: ${email}\n\n${message}`;
+          const mailto = `mailto:canaliot@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+          window.location.href = mailto;
+          formNotice.textContent = "Your email app should open with your message ready. Review and send it there.";
+        });
+      }
+    });
+  </script>
+</body>
+</html>
