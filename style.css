@@ -3659,24 +3659,28 @@ a.team-email:hover {
   }
 }
 
-#documents .resource-card {
+#documents .resource-card,
+#presentation .resource-card {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
-#documents .resource-card h3 {
+#documents .resource-card h3,
+#presentation .resource-card h3 {
   min-height: 2.7em;
   line-height: 1.35;
 }
 
-#documents .resource-card > p {
+#documents .resource-card > p,
+#presentation .resource-card > p {
   flex: 1;
   margin-bottom: 18px;
   line-height: 1.7;
 }
 
-#documents .resource-card .resource-download {
+#documents .resource-card .resource-download,
+#presentation .resource-card .resource-download {
   margin-top: auto;
 }
 
