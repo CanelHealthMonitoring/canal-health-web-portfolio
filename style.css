@@ -1423,7 +1423,7 @@ body {
 }
 
 .section {
-  padding-block: clamp(96px, 11vw, 148px);
+  padding-block: clamp(68px, 7vw, 104px);
 }
 
 .section-heading {
@@ -1649,7 +1649,7 @@ body {
   }
 
   .section {
-    padding-block: 88px;
+    padding-block: 64px;
   }
 
   .section-heading {
